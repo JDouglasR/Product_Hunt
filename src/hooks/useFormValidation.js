@@ -30,6 +30,7 @@ function useFormValidation(initialState, validate, action) {
 
   function handleSubmit() {
     const validationErrors = validate(values);
+    setErrors(validationErrors);
     setSubmitting(true);
   }
 
