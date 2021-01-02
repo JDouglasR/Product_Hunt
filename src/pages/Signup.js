@@ -44,6 +44,7 @@ const Signup = (props) => {
     }
     setBusy(false);
   }
+
   return (
     <IonPage>
       <NavHeader title="Sign Up" />
