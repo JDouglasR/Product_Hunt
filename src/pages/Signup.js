@@ -29,6 +29,7 @@ const Signup = (props) => {
     values,
     isSubmitting,
   } = useFormValidation(INITIAL_STATE, validateSignup, authenticateUser);
+
   const [busy, setBusy] = React.useState(false);
 
   async function authenticateUser() {
