@@ -1,4 +1,3 @@
-import { returnUpBack } from "ionicons/icons";
 import React from "react";
 import firebase from "../firebase";
 
