@@ -1,5 +1,5 @@
 import React from "react";
-import firebase from "../../firebase/firebase";
+import firebase from "../../firebase";
 import ProductItem from "./ProductItem";
 import formatDate from "date-fns/format";
 import isYesterday from "date-fns/isYesterday";
