@@ -1,10 +1,10 @@
 import React from "react";
 import firebase from "../../firebase/firebase";
-import ProductItem from "date-fns/format";
+import ProductItem from "./ProductItem";
+import formatDate from "date-fns/format";
 import isYesterday from "date-fns/isYesterday";
 import isToday from "date-fns/isToday";
-import { IonItem, IonList } from "@ionic/react";
-import { format } from "path";
+import { IonItem, IonLabel } from "@ionic/react";
 
 const ProductList = (props) => {
   const [products, setProducts] = React.useState([]);
@@ -43,7 +43,7 @@ const ProductList = (props) => {
   return products.map((product, index) => {
     const result = [
       <ProductItem
-        key={roduct.id}
+        key={product.id}
         showCount={true}
         url={`/product/${product.id}`}
         product={product}
@@ -51,6 +51,8 @@ const ProductList = (props) => {
       />,
     ];
     const currentDate = isToday(product.created)
+      ? "Today"
+      : isYesterday(product.created)
       ? "Yesterday"
       : formatDate(product.create, "MMM d");
 
