@@ -1,11 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import {
-  IonCardContent,
   IonItem,
   IonLabel,
-  IonList,
+  IonCard,
+  IonCardContent,
   IonThumbnail,
+  IonList,
+  IonImg,
 } from "@ionic/react";
 
 const ProductItem = ({ product, url, browser }) => {
@@ -33,4 +35,4 @@ const ProductItem = ({ product, url, browser }) => {
   );
 };
 
-export default withRouter{ProductItem};
+export default withRouter(ProductItem);
