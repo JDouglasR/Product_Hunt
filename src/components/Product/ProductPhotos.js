@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { IonImg, IonThumbnail } from "@ionic/react";
+import { IonImg, IonThumbnail, IonItem, IonCard, IonList } from "@ionic/react";
 
 function ProductPhotos({ photos }) {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = useState(0);
   return (
     <IonCard>
       <IonList lines="none">
@@ -13,22 +13,22 @@ function ProductPhotos({ photos }) {
           </div>
         </IonItem>
         <IonItem>
-          {photos.map((p, i) => {
+          {photos.map((p, i) => (
             <IonThumbnail
               key={`photo_${i}`}
               onClick={() => setIndex(i)}
               slot="start"
             >
               <IonImg src={p} />
-            </IonThumbnail>;
-          })}
+            </IonThumbnail>
+          ))}
         </IonItem>
       </IonList>
     </IonCard>
   );
 }
 
-ProductPhotos.PropTypes = {
+ProductPhotos.propTypes = {
   photos: PropTypes.array,
 };
 
